@@ -8,9 +8,75 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var photos = [UserPhotoMetadata]()
+    @State private var showingImagePicker = false
+    @State private var showingImageEditView = false
+    
+    @State private var inputImage: UIImage?
+    @State private var image: Image?
+    @State private var selectedImage = Image(systemName: "plus")
+    
+    @StateObject private var viewModel = ViewModel()
+    
+    enum ActiveSheet: Identifiable {
+        case showingImagePicker, showingImageEditView
+        var id: Int {
+            hashValue
+        }
+    }
+    @State var activeSheet: ActiveSheet?
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            List {
+                ForEach(photos) { photo in
+                    HStack {
+                        viewModel.fetchPhoto(meta: photo)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 75, height: 75)
+                            .shadow(radius: 1)
+                        Spacer()
+                        VStack (alignment: .trailing) {
+                            Text(photo.name)
+                                .font(.headline)
+                        }
+                    }
+                }
+            }
+            .navigationTitle("PhotoList")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        activeSheet = .showingImagePicker
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                }
+            }
+            .sheet(item: $activeSheet) { item in
+                switch item {
+                case .showingImagePicker:
+                    ImagePicker(image: $inputImage)
+                case .showingImageEditView:
+                    EditView(viewModel: viewModel, image: selectedImage)
+                }
+            }
+//
+//            .sheet(isPresented: $showingImagePicker) {
+//                ImagePicker(image: $inputImage)
+//            }
+            .onChange(of: inputImage) { _ in
+                guard let inputImage = inputImage else {
+                    return
+                }
+                image = Image(uiImage: inputImage)
+                if let image = image {
+                    selectedImage = image
+                    activeSheet = .showingImageEditView
+                }
+            }
+        }
     }
 }
 

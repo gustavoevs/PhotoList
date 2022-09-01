@@ -11,6 +11,10 @@
 		EC27EFD528C0BE9200E248AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC27EFD428C0BE9200E248AA /* ContentView.swift */; };
 		EC27EFD728C0BE9300E248AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC27EFD628C0BE9300E248AA /* Assets.xcassets */; };
 		EC27EFDA28C0BE9300E248AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC27EFD928C0BE9300E248AA /* Preview Assets.xcassets */; };
+		EC27EFE128C0BECE00E248AA /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC27EFE028C0BECE00E248AA /* ImagePicker.swift */; };
+		EC27EFE328C0C06400E248AA /* UserPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC27EFE228C0C06400E248AA /* UserPhoto.swift */; };
+		EC27EFE528C0DBB400E248AA /* ContentView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC27EFE428C0DBB400E248AA /* ContentView-ViewModel.swift */; };
+		EC27EFE928C0DE5E00E248AA /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC27EFE828C0DE5E00E248AA /* EditView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		EC27EFD428C0BE9200E248AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EC27EFD628C0BE9300E248AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC27EFD928C0BE9300E248AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EC27EFE028C0BECE00E248AA /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		EC27EFE228C0C06400E248AA /* UserPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhoto.swift; sourceTree = "<group>"; };
+		EC27EFE428C0DBB400E248AA /* ContentView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView-ViewModel.swift"; sourceTree = "<group>"; };
+		EC27EFE828C0DE5E00E248AA /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +61,10 @@
 			children = (
 				EC27EFD228C0BE9200E248AA /* PhotoListApp.swift */,
 				EC27EFD428C0BE9200E248AA /* ContentView.swift */,
+				EC27EFE828C0DE5E00E248AA /* EditView.swift */,
+				EC27EFE428C0DBB400E248AA /* ContentView-ViewModel.swift */,
+				EC27EFE228C0C06400E248AA /* UserPhoto.swift */,
+				EC27EFE028C0BECE00E248AA /* ImagePicker.swift */,
 				EC27EFD628C0BE9300E248AA /* Assets.xcassets */,
 				EC27EFD828C0BE9300E248AA /* Preview Content */,
 			);
@@ -137,8 +149,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC27EFE128C0BECE00E248AA /* ImagePicker.swift in Sources */,
 				EC27EFD528C0BE9200E248AA /* ContentView.swift in Sources */,
+				EC27EFE928C0DE5E00E248AA /* EditView.swift in Sources */,
+				EC27EFE528C0DBB400E248AA /* ContentView-ViewModel.swift in Sources */,
 				EC27EFD328C0BE9200E248AA /* PhotoListApp.swift in Sources */,
+				EC27EFE328C0C06400E248AA /* UserPhoto.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
