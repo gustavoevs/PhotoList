@@ -13,6 +13,25 @@ import SwiftUI
     @Published var photos: [UserPhoto]
     
     var selectedImage: UIImage?
+    @Published var selectedImageProcessed = Image(systemName: "clear")
+//    {
+//        get {
+//            guard let selectedImage = selectedImage else {
+//                return Image(systemName: "plus")
+//            }
+//            if let image = Image(uiImage: selectedImage) {
+//                return image
+//            }
+//            return Image(systemName: "plus")
+//        }
+//    }
+    func processInputImage(uiImage: UIImage?) {
+        guard let uiImage = uiImage else {
+            selectedImageProcessed = Image(systemName: "clear")
+            return
+        }
+        selectedImageProcessed = Image(uiImage: uiImage)
+    }
     
     func addPhoto(imageName: String, photo: Image) {
         let userPhoto = UserPhoto(image: photo)

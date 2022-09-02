@@ -29,17 +29,19 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(photos) { photo in
-                    HStack {
-                        viewModel.fetchPhoto(meta: photo)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 75, height: 75)
-                            .shadow(radius: 1)
-                        Spacer()
-                        VStack (alignment: .trailing) {
-                            Text(photo.name)
-                                .font(.headline)
+                ForEach(viewModel.photosMeta) { photo in
+                    NavigationLink (destination: DetailView(image: viewModel.fetchPhoto(meta: photo), name: photo.name)) {
+                        HStack {
+                            viewModel.fetchPhoto(meta: photo)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 75, height: 75)
+                                .shadow(radius: 1)
+                            Spacer()
+                            VStack (alignment: .trailing) {
+                                Text(photo.name)
+                                    .font(.headline)
+                            }
                         }
                     }
                 }
@@ -59,7 +61,7 @@ struct ContentView: View {
                 case .showingImagePicker:
                     ImagePicker(image: $inputImage)
                 case .showingImageEditView:
-                    EditView(viewModel: viewModel, image: selectedImage)
+                    EditView(viewModel: viewModel, image: viewModel.selectedImageProcessed)
                 }
             }
 //
@@ -67,14 +69,8 @@ struct ContentView: View {
 //                ImagePicker(image: $inputImage)
 //            }
             .onChange(of: inputImage) { _ in
-                guard let inputImage = inputImage else {
-                    return
-                }
-                image = Image(uiImage: inputImage)
-                if let image = image {
-                    selectedImage = image
-                    activeSheet = .showingImageEditView
-                }
+                viewModel.processInputImage(uiImage: inputImage)
+                activeSheet = .showingImageEditView
             }
         }
     }

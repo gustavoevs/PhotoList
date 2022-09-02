@@ -15,6 +15,7 @@
 		EC27EFE328C0C06400E248AA /* UserPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC27EFE228C0C06400E248AA /* UserPhoto.swift */; };
 		EC27EFE528C0DBB400E248AA /* ContentView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC27EFE428C0DBB400E248AA /* ContentView-ViewModel.swift */; };
 		EC27EFE928C0DE5E00E248AA /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC27EFE828C0DE5E00E248AA /* EditView.swift */; };
+		EC3B2B0328C204620089ADB1 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B2B0228C204620089ADB1 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		EC27EFE228C0C06400E248AA /* UserPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhoto.swift; sourceTree = "<group>"; };
 		EC27EFE428C0DBB400E248AA /* ContentView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView-ViewModel.swift"; sourceTree = "<group>"; };
 		EC27EFE828C0DE5E00E248AA /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		EC3B2B0228C204620089ADB1 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				EC27EFD428C0BE9200E248AA /* ContentView.swift */,
 				EC27EFE828C0DE5E00E248AA /* EditView.swift */,
 				EC27EFE428C0DBB400E248AA /* ContentView-ViewModel.swift */,
+				EC3B2B0228C204620089ADB1 /* DetailView.swift */,
 				EC27EFE228C0C06400E248AA /* UserPhoto.swift */,
 				EC27EFE028C0BECE00E248AA /* ImagePicker.swift */,
 				EC27EFD628C0BE9300E248AA /* Assets.xcassets */,
@@ -152,6 +155,7 @@
 				EC27EFE128C0BECE00E248AA /* ImagePicker.swift in Sources */,
 				EC27EFD528C0BE9200E248AA /* ContentView.swift in Sources */,
 				EC27EFE928C0DE5E00E248AA /* EditView.swift in Sources */,
+				EC3B2B0328C204620089ADB1 /* DetailView.swift in Sources */,
 				EC27EFE528C0DBB400E248AA /* ContentView-ViewModel.swift in Sources */,
 				EC27EFD328C0BE9200E248AA /* PhotoListApp.swift in Sources */,
 				EC27EFE328C0C06400E248AA /* UserPhoto.swift in Sources */,
