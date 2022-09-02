@@ -36,7 +36,6 @@ struct ContentView: View {
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 75, height: 75)
-                                .shadow(radius: 1)
                             Spacer()
                             VStack (alignment: .trailing) {
                                 Text(photo.name)
