@@ -12,31 +12,15 @@ import SwiftUI
     @Published var photosMeta: [UserPhotoMetadata]
     @Published var photos: [UserPhoto]
     
-    var selectedImage: UIImage?
-    @Published var selectedImageProcessed = Image(systemName: "clear")
-//    {
-//        get {
-//            guard let selectedImage = selectedImage else {
-//                return Image(systemName: "plus")
-//            }
-//            if let image = Image(uiImage: selectedImage) {
-//                return image
-//            }
-//            return Image(systemName: "plus")
-//        }
-//    }
-    func processInputImage(uiImage: UIImage?) {
-        guard let uiImage = uiImage else {
-            selectedImageProcessed = Image(systemName: "clear")
-            return
-        }
-        selectedImageProcessed = Image(uiImage: uiImage)
+    var currentUserPhoto = UserPhoto()
+    
+    func createPhoto(uiImage: UIImage?) {
+        currentUserPhoto = UserPhoto(uiimage: uiImage)
     }
     
-    func addPhoto(imageName: String, photo: Image) {
-        let userPhoto = UserPhoto(image: photo)
-        let userPhotoMeta = UserPhotoMetadata(name: imageName, imageId: userPhoto.id)
-        photos.append(userPhoto)
+    func addCurrentPhotoToLibrary(imageName: String) {
+        let userPhotoMeta = UserPhotoMetadata(name: imageName, imageId: currentUserPhoto.id)
+        photos.append(currentUserPhoto)
         photosMeta.append(userPhotoMeta)
     }
     
@@ -52,4 +36,33 @@ import SwiftUI
         _photosMeta = Published(wrappedValue: [UserPhotoMetadata]())
         _photos = Published(wrappedValue: [UserPhoto]())
     }
+    
+    let savePath = FileManager.documentsDirectory
+
+//    func load() {
+//        do {
+//            let data = try Data(contentsOf: savePath)
+//            locations = try JSONDecoder().decode([Location].self, from: data)
+//        } catch {
+//            locations = []
+//        }
+//    }
+    
+//    func save() {
+//        // Save metadata as JSON
+//        // Save each photo named as imageID.jpg
+//        do {
+//            let data = try JSONEncoder().encode(photosMeta)
+//            try data.write(to: savePath.appendingPathComponent("Metadata"), options: [.atomic,.completeFileProtection])
+//        } catch {
+//            print("Unable to save metadata.")
+//        }
+//
+//        for photo in photos {
+////            image = UIImage(
+////            if let jpegData = yourUIImage.jpegData(compressionQuality: 0.8) {
+////                try? jpegData.write(to: yourURL, options: [.atomic, .completeFileProtection])
+////            }
+//        }
+//    }
 }

@@ -13,8 +13,8 @@ struct ContentView: View {
     @State private var showingImageEditView = false
     
     @State private var inputImage: UIImage?
-    @State private var image: Image?
-    @State private var selectedImage = Image(systemName: "plus")
+//    @State private var image: Image?
+//    @State private var selectedImage = Image(systemName: "plus")
     
     @StateObject private var viewModel = ViewModel()
     
@@ -61,15 +61,11 @@ struct ContentView: View {
                 case .showingImagePicker:
                     ImagePicker(image: $inputImage)
                 case .showingImageEditView:
-                    EditView(viewModel: viewModel, image: viewModel.selectedImageProcessed)
+                    EditView(viewModel: viewModel)
                 }
             }
-//
-//            .sheet(isPresented: $showingImagePicker) {
-//                ImagePicker(image: $inputImage)
-//            }
             .onChange(of: inputImage) { _ in
-                viewModel.processInputImage(uiImage: inputImage)
+                viewModel.createPhoto(uiImage: inputImage)
                 activeSheet = .showingImageEditView
             }
         }

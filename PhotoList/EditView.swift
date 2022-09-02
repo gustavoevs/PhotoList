@@ -11,13 +11,12 @@ struct EditView: View {
     @Environment(\.dismiss) var dismiss
     
     @ObservedObject var viewModel: ViewModel
-    @State var image: Image
     @State private var name = ""
     
     var body: some View {
         NavigationView {
             VStack {
-                image
+                viewModel.currentUserPhoto.image
                     .resizable()
                     .scaledToFit()
                     .padding()
@@ -30,7 +29,7 @@ struct EditView: View {
             .navigationTitle("Photo Details")
             .toolbar {
                 Button("Save") {
-                    viewModel.addPhoto(imageName: name, photo: image)
+                    viewModel.addCurrentPhotoToLibrary(imageName: name)
                     dismiss()
                 }
                 .disabled(name == "")

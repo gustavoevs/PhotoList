@@ -16,6 +16,7 @@
 		EC27EFE528C0DBB400E248AA /* ContentView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC27EFE428C0DBB400E248AA /* ContentView-ViewModel.swift */; };
 		EC27EFE928C0DE5E00E248AA /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC27EFE828C0DE5E00E248AA /* EditView.swift */; };
 		EC3B2B0328C204620089ADB1 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B2B0228C204620089ADB1 /* DetailView.swift */; };
+		EC3B2B0528C211380089ADB1 /* FileManager-DocumentsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B2B0428C211380089ADB1 /* FileManager-DocumentsDirectory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		EC27EFE428C0DBB400E248AA /* ContentView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView-ViewModel.swift"; sourceTree = "<group>"; };
 		EC27EFE828C0DE5E00E248AA /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		EC3B2B0228C204620089ADB1 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		EC3B2B0428C211380089ADB1 /* FileManager-DocumentsDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager-DocumentsDirectory.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				EC27EFE428C0DBB400E248AA /* ContentView-ViewModel.swift */,
 				EC3B2B0228C204620089ADB1 /* DetailView.swift */,
 				EC27EFE228C0C06400E248AA /* UserPhoto.swift */,
+				EC3B2B0428C211380089ADB1 /* FileManager-DocumentsDirectory.swift */,
 				EC27EFE028C0BECE00E248AA /* ImagePicker.swift */,
 				EC27EFD628C0BE9300E248AA /* Assets.xcassets */,
 				EC27EFD828C0BE9300E248AA /* Preview Content */,
@@ -158,6 +161,7 @@
 				EC3B2B0328C204620089ADB1 /* DetailView.swift in Sources */,
 				EC27EFE528C0DBB400E248AA /* ContentView-ViewModel.swift in Sources */,
 				EC27EFD328C0BE9200E248AA /* PhotoListApp.swift in Sources */,
+				EC3B2B0528C211380089ADB1 /* FileManager-DocumentsDirectory.swift in Sources */,
 				EC27EFE328C0C06400E248AA /* UserPhoto.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
