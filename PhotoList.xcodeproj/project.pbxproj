@@ -64,8 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				EC27EFD228C0BE9200E248AA /* PhotoListApp.swift */,
-				EC27EFD428C0BE9200E248AA /* ContentView.swift */,
 				EC27EFE828C0DE5E00E248AA /* EditView.swift */,
+				EC27EFD428C0BE9200E248AA /* ContentView.swift */,
 				EC27EFE428C0DBB400E248AA /* ContentView-ViewModel.swift */,
 				EC3B2B0228C204620089ADB1 /* DetailView.swift */,
 				EC27EFE228C0C06400E248AA /* UserPhoto.swift */,

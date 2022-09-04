@@ -8,13 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var photos = [UserPhotoMetadata]()
     @State private var showingImagePicker = false
     @State private var showingImageEditView = false
     
     @State private var inputImage: UIImage?
-//    @State private var image: Image?
-//    @State private var selectedImage = Image(systemName: "plus")
     
     @StateObject private var viewModel = ViewModel()
     
@@ -29,10 +26,10 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(viewModel.photosMeta) { photo in
-                    NavigationLink (destination: DetailView(image: viewModel.fetchPhoto(meta: photo), name: photo.name)) {
+                ForEach(viewModel.photos) { photo in
+                    NavigationLink (destination: DetailView(image: photo.image, name: photo.name)) {
                         HStack {
-                            viewModel.fetchPhoto(meta: photo)
+                            photo.image
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 75, height: 75)

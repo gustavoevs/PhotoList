@@ -16,7 +16,7 @@ struct EditView: View {
     var body: some View {
         NavigationView {
             VStack {
-                viewModel.currentUserPhoto.image
+                viewModel.currentPhoto.image
                     .resizable()
                     .scaledToFit()
                     .padding()
@@ -29,7 +29,8 @@ struct EditView: View {
             .navigationTitle("Photo Details")
             .toolbar {
                 Button("Save") {
-                    viewModel.addCurrentPhotoToLibrary(imageName: name)
+                    viewModel.currentPhoto.name = name
+                    viewModel.addCurrentPhotoToLibrary()
                     dismiss()
                 }
                 .disabled(name == "")
