@@ -6,21 +6,33 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct DetailView: View {
-    @State var image: Image
-    @State var name: String
+    @State var photo: Photo
+    @State private var mapRegion: MKCoordinateRegion
     
     var body: some View {
         NavigationView {
             VStack {
-                image
+                photo.image
                     .resizable()
                     .scaledToFit()
-                Spacer()
+                if let location = photo.location {
+                    Map(coordinateRegion: $mapRegion, annotationItems: [location]) { location in
+                        MapMarker(coordinate: location.coordinate)
+                    }
+                }
             }
         }
-        .navigationTitle(name)
+        .navigationTitle(photo.name)
+    }
+    
+    init(photo: Photo) {
+        self.photo = photo
+        let region = photo.location?.coordinate ?? CLLocationCoordinate2D(latitude: 50, longitude: 0) // This should return nil
+        let span = MKCoordinateSpan(latitudeDelta: 50, longitudeDelta: 50)
+        mapRegion = MKCoordinateRegion(center: region, span: span)
     }
 }
 //

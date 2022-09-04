@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import CoreLocation
 
 // NOTE: Although it would be more elegant to have the photo info and the photo itself in the same struct, I seperated them in order to have the photo info easily encodable to JSON, and keep the photos themselves in a separate struct.
 // These two structs were replaced by the single class "Photo". Left in code for discussion with friends in future.
@@ -30,7 +31,7 @@ struct UserPhoto: Identifiable {
 }
 
 class Photo: Identifiable, Codable {
-    var id = UUID()
+    var id: UUID
     var name: String = ""
     var uiimage: UIImage?
     // NOTE: I don't know what the performance impact of having Image being created every time the UI accesses this.
@@ -42,15 +43,18 @@ class Photo: Identifiable, Codable {
             return Image(uiImage: uiimage)
         }
     }
+    var location: Location?
     
     enum CodingKeys: CodingKey {
         case id
         case name
+        case location
     }
     
-    init() {}
+    init() { self.id = UUID() }
     
     init(uiimage: UIImage?) {
+        self.id = UUID()
         self.uiimage = uiimage
     }
 
@@ -58,12 +62,14 @@ class Photo: Identifiable, Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(UUID.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)
+        location = try container.decode(Location.self, forKey: .location)
     }
     
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(id, forKey: .id)
         try container.encode(name, forKey: .name)
+        try container.encode(location, forKey: .location)
     }
     
     func saveImageToDocumentsDir(savePath: URL) {

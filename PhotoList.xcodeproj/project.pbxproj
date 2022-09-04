@@ -15,6 +15,8 @@
 		EC27EFE328C0C06400E248AA /* UserPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC27EFE228C0C06400E248AA /* UserPhoto.swift */; };
 		EC27EFE528C0DBB400E248AA /* ContentView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC27EFE428C0DBB400E248AA /* ContentView-ViewModel.swift */; };
 		EC27EFE928C0DE5E00E248AA /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC27EFE828C0DE5E00E248AA /* EditView.swift */; };
+		EC2B12D728C5029500657948 /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2B12D628C5029500657948 /* LocationFetcher.swift */; };
+		EC2B12D928C52C7800657948 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2B12D828C52C7800657948 /* Location.swift */; };
 		EC3B2B0328C204620089ADB1 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B2B0228C204620089ADB1 /* DetailView.swift */; };
 		EC3B2B0528C211380089ADB1 /* FileManager-DocumentsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B2B0428C211380089ADB1 /* FileManager-DocumentsDirectory.swift */; };
 /* End PBXBuildFile section */
@@ -29,6 +31,8 @@
 		EC27EFE228C0C06400E248AA /* UserPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhoto.swift; sourceTree = "<group>"; };
 		EC27EFE428C0DBB400E248AA /* ContentView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView-ViewModel.swift"; sourceTree = "<group>"; };
 		EC27EFE828C0DE5E00E248AA /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		EC2B12D628C5029500657948 /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
+		EC2B12D828C52C7800657948 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		EC3B2B0228C204620089ADB1 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		EC3B2B0428C211380089ADB1 /* FileManager-DocumentsDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager-DocumentsDirectory.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,10 +67,12 @@
 		EC27EFD128C0BE9200E248AA /* PhotoList */ = {
 			isa = PBXGroup;
 			children = (
+				EC2B12D828C52C7800657948 /* Location.swift */,
 				EC27EFD228C0BE9200E248AA /* PhotoListApp.swift */,
 				EC27EFE828C0DE5E00E248AA /* EditView.swift */,
 				EC27EFD428C0BE9200E248AA /* ContentView.swift */,
 				EC27EFE428C0DBB400E248AA /* ContentView-ViewModel.swift */,
+				EC2B12D628C5029500657948 /* LocationFetcher.swift */,
 				EC3B2B0228C204620089ADB1 /* DetailView.swift */,
 				EC27EFE228C0C06400E248AA /* UserPhoto.swift */,
 				EC3B2B0428C211380089ADB1 /* FileManager-DocumentsDirectory.swift */,
@@ -157,12 +163,14 @@
 			files = (
 				EC27EFE128C0BECE00E248AA /* ImagePicker.swift in Sources */,
 				EC27EFD528C0BE9200E248AA /* ContentView.swift in Sources */,
+				EC2B12D928C52C7800657948 /* Location.swift in Sources */,
 				EC27EFE928C0DE5E00E248AA /* EditView.swift in Sources */,
 				EC3B2B0328C204620089ADB1 /* DetailView.swift in Sources */,
 				EC27EFE528C0DBB400E248AA /* ContentView-ViewModel.swift in Sources */,
 				EC27EFD328C0BE9200E248AA /* PhotoListApp.swift in Sources */,
 				EC3B2B0528C211380089ADB1 /* FileManager-DocumentsDirectory.swift in Sources */,
 				EC27EFE328C0C06400E248AA /* UserPhoto.swift in Sources */,
+				EC2B12D728C5029500657948 /* LocationFetcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +301,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"PhotoList/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "\"Allow location access to tag your photo with location.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -321,6 +330,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"PhotoList/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "\"Allow location access to tag your photo with location.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

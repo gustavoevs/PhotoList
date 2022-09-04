@@ -11,9 +11,11 @@ import SwiftUI
 @MainActor class ViewModel: ObservableObject {
     @Published var photos: [Photo]
     var currentPhoto = Photo()
+    let locationFetcher = LocationFetcher()
     
     func createPhoto(uiImage: UIImage?) {
-         currentPhoto = Photo(uiimage: uiImage)
+        currentPhoto = Photo(uiimage: uiImage)
+        currentPhoto.location = Location(coordinates: locationFetcher.lastKnownLocation)
     }
     
     func addCurrentPhotoToLibrary() {
@@ -24,6 +26,7 @@ import SwiftUI
     init() {
         photos = [Photo]()
         load()
+        locationFetcher.start()
     }
     
     let savePath = FileManager.documentsDirectory
@@ -40,7 +43,7 @@ import SwiftUI
         
         // Load all images
         for item in photos {
-            item.loadImageFromDocumentsDir(loadPath: savePath.appendingPathComponent(item.id.uuidString))
+            item.loadImageFromDocumentsDir(loadPath: savePath)
         }
     }
     

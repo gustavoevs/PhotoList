@@ -27,7 +27,7 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(viewModel.photos) { photo in
-                    NavigationLink (destination: DetailView(image: photo.image, name: photo.name)) {
+                    NavigationLink (destination: DetailView(photo: photo)) {
                         HStack {
                             photo.image
                                 .resizable()
